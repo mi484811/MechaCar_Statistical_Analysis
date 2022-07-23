@@ -1,78 +1,49 @@
-q()
-q()
+
 install.packages("tidyverse")
 install.packages("jsonlite")
-install.packages("tidyverse")
-instal.packages("Rtools")
-install.packages("Rtools")
-writeLines('PATH="${RTOOLS42_HOME}\\usr\\bin;${PATH}"'), con = "~/.Renviron")
-writeLines('PATH="${RTOOLS42_HOME}\\usr\\bin;${PATH}"'); con = "~/.Renviron")
-writeLines('PATH="${RTOOLS42_HOME}\\usr\\bin;${PATH}"', con="~/.Renviron")
-Sys.which("make")
-install.packages("tidyverse")
-install.packages("Rtools")
-install.packages("tidyverse")
-writeLines('PATH="$RTOOLS42_HOME}\\usr\\bin;${PATH}"', con="~Renviron")
-Sys.which("make")
-.rs.restartR()
-Sys.which("make")
-writeLines('PATH="$RTOOLS42_HOME}\\usr\\bin;${PATH}"', con="~Renviron")
-.rs.restartR()
-Sys.which("make")
-install.packages("tidyverse")
-.rs.restartR()
-install.packages("tidyverse")
-install.packages("tidyverse")
-install.packages("jsonlite")
-library('dplyr')
+
+#------------------------------------------Deliverable 1----------------------------------------------------------------------------------------------
+
 setwd("C:/Users/Mic/Desktop/Class/MechaCar_Statistical_Analysis")
+
 library('dplyr')
+
 MechaCar_mpg <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
+
 lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=MechaCar_mpg)
+
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=MechaVar_mpg))
+
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=MechaCar_mpg))
 View(MechaCar_mpg)
+
+#---------------------------------------------Deliverable 2--------------------------------------------------------------------------------------------
 Suspension_Coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+
 total_summary <- Suspension_Coil %>% summarize(Mean_PSI=mean(PSI),
-Median_PSI=median(PSI),
-Var_PSI=var(PSI),
-Std_Dev_PSI=sd(PSI),
-Num_Coil=n(), .groups = 'keep')
+        Median_PSI=median(PSI),
+        Var_PSI=var(PSI),
+        Std_Dev_PSI=sd(PSI),
+        Num_Coil=n(), .groups = 'keep')
+        
 View(total_summary)
+
 lot_summary <-  Suspension_Coil  %>% group_by(Manufacturing_Lot) %>% summarize(Mean_PSI=mean(PSI),
-Median_PSI=median(PSI),
-Var_PSI=var(PSI),
-Std_Dev_PSI=sd(PSI),
-Num_Coil=n(), .groups = 'keep')
+        Median_PSI=median(PSI),
+        Var_PSI=var(PSI),
+        Std_Dev_PSI=sd(PSI),
+        Num_Coil=n(), .groups = 'keep')
+        
 View(lot_summary)
+
+#---------------------------------------------Deliverable 3--------------------------------------------------------------------------------------------
 t.test(Suspension_Coil$PSI,mu=1500)
+
 lot1 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot1")
 lot2 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot2")
 lot3 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot3")
+
 t.test(lot1$PSI,mu=1500)
 t.test(lot2$PSI,mu=1500)
 t.test(lot3$PSI,mu=1500)
-View(lot1)
-library('dplyr')
-library(dplyr)
-setwd("C:/Users/Mic/Desktop/Class/MechaCar_Statistical_Analysis")
-MechaCar_mpg <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
-lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=MechaCar_mpg)
-summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=MechaCar_mpg))
-Suspension_Coil <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
-total_summary <- Suspension_Coil %>% summarize(Mean_PSI=mean(PSI),
-Median_PSI=median(PSI),
-Var_PSI=var(PSI),
-Std_Dev_PSI=sd(PSI),
-Num_Coil=n(), .groups = 'keep')
-lot_summary <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean_PSI=mean(PSI),
-Median_PSI=median(PSI),
-Var_PSI=var(PSI), Std_Dev_PSI=sd(PSI),
-Num_Coil=n(), .groups = 'keep')
-t.test(Suspension_Coil$PSI,mu=1500)
-lot1 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot1")
-lot2 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot2")
-lot3 <- subset(Suspension_Coil, Manufacturing_Lot=="Lot3")
-t.test(lot1$PSI,mu=1500)
-t.test(lot2$PSI,mu=1500)
-t.test(lot3$PSI,mu=1500)
+
